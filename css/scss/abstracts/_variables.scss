@@ -7,13 +7,13 @@ $color-secondary: #ec2929;
 $color-secondary-light: #ea5b5b;
 $color-secondary-dark: #c11a1a;
 
-$color-tertiary: #2185d0;
-$color-tertiary-light: #409bdf;
-$color-tertiary-dark: #0d68ac;
+$color-tertiary: #e4dff6;
+
 $color-skyblue-light: #f4f9ff;
 
 $color-grey-light-1: #f9fafc;
 $color-grey-light-2: #f1f1f1;
+$color-grey-light-3: #f8f7fd;
 
 $color-grey-dark: #999;
 $color-grey-dark-2: #666;
@@ -32,14 +32,14 @@ $color-black: #000;
 
 
 // FONT FAMILY
-$font-family-primary: 'Lato', sans-serif;
+$font-family-primary: 'Roboto', sans-serif;
 $font-family-secondary: 'Livvic', sans-serif;
 
 // FONT SIZES
 $tiny-font-size: 1.1rem;
 $small-font-size: 1.3rem;
 $medium-font-size: 1.4rem;
-$normal-font-size: 1.6rem;
+$normal-font-size: 1.5rem;
 $large-font-size: 1.8rem;
 $big-font-size: 2.4rem;
 $huge-font-size: 3rem;
@@ -48,7 +48,7 @@ $huge-font-size: 3rem;
 // FONT WEIGHT
 $font-normal: normal;
 $font-light: 300;
-$font-semi: 600;
+$font-semi: 500;
 $font-bold: 700;
 $font-black: 900;
 

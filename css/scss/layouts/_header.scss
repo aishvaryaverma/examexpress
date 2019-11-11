@@ -6,20 +6,19 @@
     z-index: 999;    
     display: flex;
     align-items: center;
-    padding: 1rem 2.5rem;
     background: $color-primary;
+    justify-content: space-between;
 
     &__logo {
         display: flex;
         align-items: center;
+        background-color: $color-white;
 
         a {
             display: block;
-            max-width: 18rem;
-            
-            svg {
-                display: block;
-            }
+            padding: 2rem;
+            max-width: 26rem;
+            min-height: 8.5rem;
         }
     }
 
@@ -27,6 +26,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        padding-right: 4rem;
 
         a {
             display: block;
@@ -36,133 +36,8 @@
             line-height: 4rem;
 
             &:hover {
-                color: $color-secondary;
+                i { margin-left: .2rem; }
             }
         }
-        span {
-            color: white;
-            padding: 0 1rem;
-        }
-
-        .avatar {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            display: none;
-            align-items: center;
-
-            span { padding: 0; }
-            
-            .avatarImg {
-                position: relative;
-                z-index: 1;
-                margin-right: 1rem;
-                
-                img {
-                    display: block;
-                }
-                
-                .status {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    padding: 0;
-                    width: 1rem;
-                    z-index: 10;
-                    height: 1rem;
-                    border: .2rem solid white;
-                    border-radius: 50%;
-
-                    &.active { background: #03c38a; }
-                    &.panding { background: #c3c103; }
-                    &.danger { background: #c30303; }
-                    &.offline { background: #304c88; }
-                }
-            }
-        }
-
-        > .dropdown {
-            color: white;
-            margin-left: 2rem;
-            line-height: 4rem;
-            padding-left: 1.5rem;
-            border-left: 1px solid rgba($color: white, $alpha: 0.15);
-
-            .menu {
-                min-width: 18rem;
-            }
-        }
-
-        .selectVehiclePlaceholder {
-            color: white;
-        }
-        .selectVehicle {
-            position: relative;
-            display: flex;
-            color: white;
-            padding-left: 9rem;
-            align-items: center;
-
-            img {
-                position: absolute;
-                top: -1.5rem;
-                left: -0.5rem;
-                width: 11rem;
-            }
-
-            .ui.selection {
-                border: none;
-                color: white;
-                background: none;
-                min-width: 12rem;
-                
-                &.visible:not(.menu) {
-                    .text:not(.default) { color: white; }
-                }
-                .visible.menu {
-                    .text:not(.default) { color: #333333; }
-                }
-            }
-        }
-    }
-}
-
-.linkAccountPopup {
-    position: absolute;
-    display: flex;
-    z-index: 9999;
-    padding: 2rem 2.5rem;
-    
-    &.noborder { border: none; }
-    &.left { left: 0; }
-    &.right { right: 0; }
-    &.top { top: 0; }
-    &.bottom { bottom: 0; }
-    &.left-auto { left: auto; }
-    &.top-auto { top: auto; }
-    &.full { width: 100%; }
-
-    .textContent {
-        font-size: $normal-font-size;
-    }
-    .closeAlert {
-        margin-left: auto;
-        cursor: pointer;
-
-        &:hover {
-            transform: scale(1.2);
-        }
-    }
-    &.animatedFromTop {
-        animation-name: moveDown;
-        animation-duration: .5s;
-        animation-timing-function: ease-out;
-        animation-fill-mode: backwards;
-    }
-    &.animatedFromBottom {
-        animation-name: moveUp;
-        animation-duration: .5s;
-        animation-timing-function: ease-out;
-        animation-fill-mode: backwards;
     }
 }

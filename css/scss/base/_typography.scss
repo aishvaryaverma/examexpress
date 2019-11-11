@@ -1,6 +1,6 @@
 body {
 	font-family: $font-family-primary;
-	font-size: 1.6rem;
+	font-size: $normal-font-size;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -10,13 +10,19 @@ h1, h2, h3, h4, h5, h6 {
 	color: $color-grey-dark-3;
 	
 	&.reverse {
-		font-weight: 300;
+		font-weight: $font-light;
 	}
 	&.normal {
-		font-weight: 400;
+		font-weight: $font-normal;
 	}
 	&.semi {
-		font-weight: 600;
+		font-weight: $font-semi;
+	}
+	&.bold {
+		font-weight: $font-bold;
+	}
+	&.black {
+		font-weight: $font-black;
 	}
 	&.capitalize {
 		text-transform:capitalize;
@@ -78,5 +84,20 @@ ul {
 				margin-bottom: 2rem;
 			}
 		}
+	}
+}
+
+.numberList {
+	padding-left: 2.2rem;
+	list-style-position: outside;
+	// list-style-type: decimal-leading-zero;
+
+	li {
+		font-size: $normal-font-size;
+		padding-left: 1.5rem;
+		line-height: 1.4;
+		margin-bottom: 1rem;
+
+		&:last-child { margin-bottom: 0; }
 	}
 }

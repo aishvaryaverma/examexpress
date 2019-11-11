@@ -1,41 +1,4 @@
-.bodyContent {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    display: flex;
-    overflow: hidden;
-    min-height: calc(100vh - 6rem);
-    justify-content: space-between;
-
-    &__left {
-        flex-shrink: 0;
-        flex-basis: 30rem;
-        min-height: calc(100vh - 6rem);
-
-        &.folded {
-            flex-basis: 6rem;
-        }
-
-        @media (max-width: $macbook) {
-            flex-basis: 26rem;
-        }
-    }
-    
-    &__right {
-        flex-grow: 1;
-        flex-basis: auto;
-        background: #f4f7fc;
-        // max-width: calc(100vw - 30rem);
-
-        .commonPadding {
-            padding: 2.5rem;
-        }
-    }
-
-    
-}
-
 .container {
 	width: 100%;
-	max-width: 16rem;
+	max-width: 1280px;
 }

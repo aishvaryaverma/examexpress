@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Livvic:300,400,400i,500&display=swap');
 
 @import 'abstracts/variables';
@@ -14,6 +14,7 @@
 
 
 @import "components/alert";
+@import "components/card";
 @import "components/button";
 @import "components/forms";
 @import "components/headings";
@@ -22,10 +23,13 @@
 @import "components/section";
 @import "components/spinner";
 @import "components/tabs";
+@import "components/table";
 
 
 @import "layouts/header";
 @import "layouts/menu";
 @import "layouts/grid";
+@import "layouts/footer";
 
+@import "pages/auth";
 @import "pages/dashboard";

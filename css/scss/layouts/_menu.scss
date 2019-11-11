@@ -13,13 +13,13 @@
     }
 }
 
-ul#mainMenu.mainMenu {
+.leftMenu {
     display: flex;
     width: 100%;
     margin: 0;
     overflow-Y: auto;
     flex-direction: column;
-    height: calc(100% - 5rem);
+    height: 100%;
 
     &:first-child { padding: 2rem 0; }
 
@@ -36,84 +36,24 @@ ul#mainMenu.mainMenu {
             z-index: 1;
             display: flex;
             align-items: center;
-            padding: 1.5rem 2.5rem;
+            padding: 2rem 2.5rem;
             color: $color-grey-dark-3;
-            transition: none;
-
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 0;
-                z-index: -1;
-                height: 100%;
-                transition: all .2s ease-out;
-                background-color: #e5edf7;
-            }
-
-            .content {
-                width: auto;
-                flex-grow: 1;
-                flex-basis: auto;
-                font-size: $medium-font-size;
-            }
-            i.icon {
-                width: 2.6rem;
-                height: 2.6rem;
-                margin-right: 1.5rem;
-                background-image: image('menu_sprite.png');
-                background-position: 0 0;
-                background-repeat: no-repeat;
-                background-size: 2.6rem auto;
-
-                &.dashboard_icon        { background-position: 0 0; }
-                &.driver                { background-position: 0 -26px; }
-                &.climate_control       { background-position: 0 -52px; }
-                &.charges               { background-position: 0 -78px; }
-                &.summary               { background-position: 0 -104px; }
-                &.location              { background-position: 0 -130px; }
-                &.list_icon             { background-position: 0 -156px; }
-            }
+            border-left: 4px solid transparent;
         }
-
-        &:after {
-            position: absolute;
-            z-index: 2;
-            top: 2rem;
-            right: 2rem;
-            width: 2rem;
-            height: 2rem;
-            font-size: $big-font-size;
-            line-height: 2rem;
-            text-align: center;
-        }
-        &.plus:after { content: '+' }
-        &.minus:after { content: '-'; line-height: 1.5rem; font-size: 2.7rem; opacity: 0.85; }
 
         // Hover functions
         &:hover {
-            a {    
-                // background: rgba($color: black, $alpha: 0.04);
-                &::before {
-                    width: 100%;
-                }
-
-                > i.icon {
-                    background-image: image('menu_sprite_blue.png');
-                }
+            a {
+                border-color: $color-primary;
+                background-color: $color-grey-light-2;
             }
         }
+
         // Active class
         &.active {
-            color: #2185d0;
-
-            > a {
-                color: #2185d0;
-                
-                > i.icon {
-                    background-image: image('menu_sprite_blue.png');
-                }
+            a {
+                border-color: $color-primary;
+                background-color: $color-grey-light-2;
             }
         }
 
