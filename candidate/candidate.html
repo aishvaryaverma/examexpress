@@ -17,14 +17,14 @@
 	<!-- StyleSheet -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 			 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../css/style.css">
 
 </head>
 
 <body>
 	<header class="mainHeader">
 		<div class="mainHeader__logo">
-			<a href="#!"><img src="img/logo.png" alt="ExamExpress"></a>
+			<a href="#!"><img src="../img/logo.png" alt="ExamExpress"></a>
 		</div>
 
 		<div class="mainHeader__links">
@@ -36,9 +36,9 @@
 		<div class="dashboard__menu">
 			<div class="leftMenu">
 				<ul>
-					<li><a href="#!">Profile</a></li>
+					<li class="active"><a href="#!">Profile</a></li>
 					<li><a href="#!">Documents</a></li>
-					<li class="active"><a href="#!">Quizzes</a></li>
+					<li><a href="#!">Quizzes</a></li>
 				</ul>
 			</div>
 		</div>
@@ -46,59 +46,65 @@
 		<div class="dashboard__content">
 			<div class="card">
 				<div class="card-body">
-					<h3 class="size36 reverse margin-bottom-60">Agri_GFP_The_Grp-01</h3>
-					
-					<div class="quizzeQuestionBox">
-						<div class="quizzeProgressBar">
-							<div class="progress" style="width: 30%;"></div>
+					<div class="profileBox">
+						<div class="profileBox__picture">
+							<figure>
+								<img src="../img/avatar.jpg" alt="Avatar">
+								<a href="#!" class="updatePic">Update</a>
+							</figure>
 						</div>
-						<div class="quizzeTimer">
-							<span class="placeholder">Time Remaining</span>
-							<span class="timeLeft">45:35</span>
+						<div class="profileBox__info">
+							<div class="name">Suhas Bhiva Raut</div>
 						</div>
-						<form>
-							<h4 class="size24 normal margin-bottom-30">At which state of analytics does your company stand?</h4>
-							<ul class="quizzeQuestions">
-								<li>
-									<label for="question1">
-										<input type="radio" name="question" id="question1">
-										<span class="icon"></span>
-										<span class="text">All decisions are spontaneous</span>
-									</label>
-								</li>
-								<li>
-									<label for="question2">
-										<input type="radio" name="question" id="question2">
-										<span class="icon"></span>
-										<span class="text">Only the basic understanding of potential value</span>
-									</label>
-								</li>
-								<li>
-									<label for="question3">
-										<input type="radio" name="question" id="question3">
-										<span class="icon"></span>
-										<span class="text">Proven value in limited use cases</span>
-									</label>
-								</li>
-								<li>
-									<label for="question4">
-										<input type="radio" name="question" id="question4">
-										<span class="icon"></span>
-										<span class="text">Broadly used across company for multiple use cases</span>
-									</label>
-								</li>
-								<li>
-									<label for="question5">
-										<input type="radio" name="question" id="question5">
-										<span class="icon"></span>
-										<span class="text">Essential part of company's culture & decision making</span>
-									</label>
-								</li>
-							</ul>
-							<div class="padding-top-40">
-								<input type="submit" value="Next" class="btn btn-primary">
+					</div>
+
+					<div class="custom-form margin-top-50">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="">Enrolment No</label>
+									<input type="text" name="" id="" class="form-control">
+								</div>
 							</div>
-						</form>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="">Name</label>
+									<input type="text" name="" id="" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="">Gender</label>
+									<select name="" id="" class="form-control">
+										<option value=""></option>
+										<option value="">Male</option>
+										<option value="">Female</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="">Phone</label>
+									<input type="text" name="" id="" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="">Email</label>
+									<input type="text" name="" id="" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="">Date of Birth</label>
+									<input type="text" name="" id="" class="form-control">
+								</div>
+							</div>
+						</div>
+
+						<div class="text-right">
+							<input type="submit" value="Save" class="btn btn-primary">
+						</div>
 					</div>
 				</div>
 			</div>

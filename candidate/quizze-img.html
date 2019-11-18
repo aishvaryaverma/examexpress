@@ -17,14 +17,14 @@
 	<!-- StyleSheet -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 			 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../css/style.css">
 
 </head>
 
 <body>
 	<header class="mainHeader">
 		<div class="mainHeader__logo">
-			<a href="#!"><img src="img/logo.png" alt="ExamExpress"></a>
+			<a href="#!"><img src="../img/logo.png" alt="ExamExpress"></a>
 		</div>
 
 		<div class="mainHeader__links">
@@ -46,45 +46,53 @@
 		<div class="dashboard__content">
 			<div class="card">
 				<div class="card-body">
-					<h3 class="size36 reverse margin-bottom-40">Quizzes</h3>
+					<h3 class="size36 reverse margin-bottom-60">Agri_GFP_The_Grp-01</h3>
 					
-					<form class="documentBox">
-						<div class="table-responsive">
-							<table class="table custom-table table-striped">
-								<thead>
-									<tr>
-										<th scope="col">Quizzes</th>
-										<th scope="col">Status</th>
-										<th scope="col">Action</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<th scope="row">Agri_GFP_The_Grp-01</th>
-										<td>Not Started</td>
-										<td><a href="#!" class="btn btn-sm btn-info">Start</a></td>
-									</tr>
-								</tbody>
-							</table>
+					<div class="quizzeQuestionBox">
+						<div class="quizzeProgressBar">
+							<div class="progress" style="width: 40%;"></div>
 						</div>
-
-						<div class="instructionsBox margin-top-20">
-							<h4 class="size24 normal">Instructions</h4>
-							<div class="timer">Time Allowed: 60 min</div>
-							<ol class="numberList">
-								<li>Please see and ensure the details of this test (Like duration and number of questions).</li>
-								<li>As the test begins, test question will start appering sequentially (one by one ) and reverse clock will show the remaining time.</li>
-								<li>Incase of any power failure or any interruption, you need not be panic. your test data will get preserve on the backend server.</li>
-								<li>You should make sure that before your click on the "Submit Test" Button, you have completed/finished the response activity; incase</li>
-								<li>Once you have pressed the submit button of the ongoing test, you will get confirmation message on screen.</li>
-								<li>Now you may Click on "Start" button to begin the test .....!! ALL THE VERY BEST TO YOU !!</li>
-							</ol>
+						<div class="quizzeTimer">
+							<span class="placeholder">Time Remaining</span>
+							<span class="timeLeft">45:00</span>
 						</div>
-						
-						<div class="padding-top-40 text-right">
-							<input type="submit" value="Save" class="btn btn-primary">
-						</div>
-					</form>
+						<form>
+							<h4 class="size24 normal margin-bottom-30">How do you collect and store data for analytics?</h4>
+							<ul class="quizzeQuestions typeImage">
+								<li>
+									<label for="question1">
+										<span class="image"><img src="../img/img-1.jpg" alt="img"></span>
+										<input type="radio" name="question" id="question1">
+										<span class="icon"></span>
+									</label>
+								</li>
+								<li>
+									<label for="question2">
+										<span class="image"><img src="../img/img-2.jpg" alt="img"></span>
+										<input type="radio" name="question" id="question2">
+										<span class="icon"></span>
+									</label>
+								</li>
+								<li>
+									<label for="question3">
+										<span class="image"><img src="../img/img-3.jpg" alt="img"></span>
+										<input type="radio" name="question" id="question3">
+										<span class="icon"></span>
+									</label>
+								</li>
+								<li>
+									<label for="question4">
+										<span class="image"><img src="../img/img-4.jpg" alt="img"></span>
+										<input type="radio" name="question" id="question4">
+										<span class="icon"></span>
+									</label>
+								</li>
+							</ul>
+							<div class="padding-top-40">
+								<input type="submit" value="Next" class="btn btn-primary">
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
