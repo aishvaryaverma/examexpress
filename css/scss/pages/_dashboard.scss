@@ -92,6 +92,91 @@
     }
 }
 
+.quizzeQuestionBox {
+    display: flex;
+
+    &__left {
+        flex-basis: 80%;
+        width: 80%;
+    }
+
+    &__right {
+        width: 20%;
+        flex-basis: 20%;
+        flex-shrink: 1;
+        border-left: 1px solid #ddd;
+        padding-left: 2rem;
+
+        .stepCompleted {
+            display: flex;
+            flex-direction: column;
+
+            &__item {
+                display: flex;
+                align-items: center;
+                padding: .5rem 1rem;
+                margin-bottom: .3rem;
+                border: 1px solid #ddd;
+                user-select: none;
+                cursor: pointer;
+                justify-content: space-evenly;
+                &:last-child { margin-bottom: 0; }
+
+                .count {
+                    flex-shrink: 1;
+                    flex-basis: 2.5rem;
+                }
+                .preview {
+                    flex-grow: 1;
+                    width: calc(100% - 6rem);
+                    font-size: 12px;
+                    flex-basis: auto;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .check {
+                    position: relative;
+                    z-index: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-basis: 1.6rem;
+                    width: 1.6rem;
+                    height: 1.6rem;
+                    flex-shrink: 1;
+                    margin-left: .4rem;
+                    border: 1px solid #ededed;
+
+                    &:before {
+                        content: '';
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        opacity: 0;
+                        background-color: white;
+                    }
+                }
+
+                &:hover {
+                    border-color: #ccc;
+                    background-color: #f9f9f9;
+                }
+
+                &.checked {
+                    border-color: #ccc;
+                    background-color: $color-primary;
+
+                    .count, .preview { color: white; }
+
+                    .check:before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .quizzeProgressBar {
     position: absolute;
     top: 0;
@@ -186,18 +271,52 @@
 
 .quizzeTimer {
     position: absolute;
-    top: 6rem;
-    right: 4rem;
-    padding: 2rem 3rem;
-    border-radius: 2rem;
+    top: 3rem;
+    right: 0;
+    padding: 1.5rem 2.5rem;
     text-align: center;
+    border-radius: 1rem 0 0 1rem;
     background-color: $color-tertiary;
+    display: flex;
+    align-items: center;
 
     span {
         display: block;
 
         &.timeLeft {
             font-size: $big-font-size;
+            margin-left: 1rem;
+        }
+    }
+}
+
+.cameraWidget {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 20rem;
+    height: 12rem;
+    background-color: #222222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        min-height: 100%;
+        max-height: 100%;
+    }
+
+    .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: .5rem;
+        opacity: 1;
+        cursor: pointer;
+        background-color: $color-secondary;
+
+        img {
+            width: 1.6rem;
         }
     }
 }
