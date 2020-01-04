@@ -44,7 +44,7 @@ html {
       font-size: 59.375%; } }
 
 body {
-  padding: 85px 0 0;
+  padding: 6rem 0 0;
   box-sizing: border-box;
   background-color: #f9fafc;
   min-width: 140rem; }
@@ -716,7 +716,11 @@ ul {
   border: none;
   box-shadow: 0 0 10px 1px rgba(7, 36, 184, 0.06); }
   .card-body {
-    padding: 4rem 6rem; }
+    padding: 3rem; }
+    .card-body.sm {
+      padding: 3rem 4rem; }
+    .card-body.lg {
+      padding: 5rem 6rem; }
 
 .btn {
   display: inline-block;
@@ -766,7 +770,14 @@ ul {
       background: #bfbfbf; }
   .btn.btn-border {
     color: #232323;
+    padding: 1.4rem 3rem;
     border: solid #909090 1px; }
+    .btn.btn-border.btn-sm {
+      font-size: 1.4rem;
+      padding: 0.9rem 2.5rem; }
+    .btn.btn-border.btn-lg {
+      font-size: 1.8rem;
+      padding: 1.6rem 4rem; }
     .btn.btn-border:hover {
       color: white;
       background: #1c9bae;
@@ -808,6 +819,19 @@ ul {
     height: auto;
     font-size: 1.5rem;
     padding: 1rem 1.5rem; }
+  .custom-form .btnBox {
+    display: flex;
+    align-items: center; }
+    .custom-form .btnBox .btn {
+      margin-left: .5rem; }
+      .custom-form .btnBox .btn:first-child {
+        margin-left: 0; }
+    .custom-form .btnBox.justify-between {
+      justify-content: space-between; }
+    .custom-form .btnBox.justify-end {
+      justify-content: flex-end; }
+    .custom-form .btnBox.justify-center {
+      justify-content: center; }
 
 .headingBox {
   padding: 2rem 2.5rem;
@@ -1120,23 +1144,38 @@ ul {
     align-items: center;
     background-color: #fff; }
     .mainHeader__logo a {
-      display: block;
-      padding: 2rem;
-      max-width: 26rem;
-      min-height: 8.5rem; }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 2rem;
+      max-width: 22rem;
+      min-height: 6rem; }
+      .mainHeader__logo a img {
+        max-height: 3rem; }
   .mainHeader__links {
     display: flex;
+    padding-right: 2rem;
     align-items: center;
-    justify-content: flex-end;
-    padding-right: 4rem; }
-    .mainHeader__links a {
-      display: block;
-      font-size: 1.5rem;
-      color: white;
-      padding: 0 1rem;
-      line-height: 4rem; }
-      .mainHeader__links a:hover i {
-        margin-left: .2rem; }
+    justify-content: flex-end; }
+    .mainHeader__links .dropdown {
+      display: flex;
+      font-size: 1.6rem; }
+      .mainHeader__links .dropdown button {
+        display: flex;
+        align-items: center;
+        border: none;
+        outline: none;
+        background: none;
+        padding: 1rem;
+        color: #ffffff; }
+        .mainHeader__links .dropdown button .userIcon {
+          font-size: 2rem;
+          margin-right: 10px; }
+        .mainHeader__links .dropdown button i {
+          margin-left: 5px; }
+      .mainHeader__links .dropdown .dropdown-menu {
+        min-width: 16rem;
+        font-size: 1.5rem; }
 
 .fixedMenu {
   position: fixed;
@@ -1153,6 +1192,7 @@ ul {
 
 .leftMenu {
   display: flex;
+  display: none;
   width: 100%;
   margin: 0;
   overflow-Y: auto;
@@ -1363,10 +1403,11 @@ ul {
     flex-basis: 26rem;
     min-width: 26rem;
     background-color: white;
-    box-shadow: 5px 0 5px 0 rgba(0, 0, 0, 0.03); }
+    box-shadow: 5px 0 5px 0 rgba(0, 0, 0, 0.03);
+    display: none; }
   .dashboard__content {
     flex-grow: 1;
-    padding: 3rem;
+    padding: 5rem 3rem;
     flex-basis: auto; }
 
 .profileBox {
@@ -1404,15 +1445,51 @@ ul {
     .profileBox__info .name {
       font-size: 2.4rem; }
 
-.documentBox .btn-sm {
-  font-size: 1.3rem;
-  padding: .7rem 1.2rem;
-  border-radius: 3px; }
+.documentBox {
+  display: flex;
+  align-items: flex-start; }
+  .documentBox__item {
+    width: 32%;
+    display: flex;
+    margin-left: 2%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column; }
+    .documentBox__item:first-child, .documentBox__item:nth-child(3n+1) {
+      margin-left: 0; }
+    .documentBox__item .label {
+      width: 100%;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #cccccc; }
+    .documentBox__item .btn {
+      margin-right: 5px; }
+      .documentBox__item .btn:last-child {
+        margin-right: 0; }
+  .documentBox--webcam {
+    position: relative;
+    z-index: 1;
+    display: flex; }
+    .documentBox--webcam .myCamera {
+      display: none;
+      width: 34rem;
+      height: 24rem;
+      margin-bottom: 2rem; }
+    .documentBox--webcam .results {
+      position: absolute;
+      top: 5.6rem;
+      left: 0; }
+    .documentBox--webcam .btnBox {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem; }
 
 .instructionsBox {
   position: relative;
   z-index: 1;
   padding: 3rem;
+  margin: 2rem 0 3rem;
   background: #f8f7fd; }
   .instructionsBox .timer {
     position: absolute;
@@ -1423,69 +1500,51 @@ ul {
     background-color: #e4dff6; }
 
 .quizzeQuestionBox {
-  display: flex; }
+  display: flex;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #ddd; }
   .quizzeQuestionBox__left {
-    flex-basis: 80%;
-    width: 80%; }
+    width: 80%;
+    flex-basis: 80%; }
   .quizzeQuestionBox__right {
     width: 20%;
     flex-basis: 20%;
     flex-shrink: 1;
-    border-left: 1px solid #ddd;
-    padding-left: 2rem; }
-    .quizzeQuestionBox__right .stepCompleted {
-      display: flex;
-      flex-direction: column; }
-      .quizzeQuestionBox__right .stepCompleted__item {
-        display: flex;
-        align-items: center;
-        padding: .5rem 1rem;
-        margin-bottom: .3rem;
-        border: 1px solid #ddd;
-        user-select: none;
-        cursor: pointer;
-        justify-content: space-evenly; }
-        .quizzeQuestionBox__right .stepCompleted__item:last-child {
-          margin-bottom: 0; }
-        .quizzeQuestionBox__right .stepCompleted__item .count {
-          flex-shrink: 1;
-          flex-basis: 2.5rem; }
-        .quizzeQuestionBox__right .stepCompleted__item .preview {
-          flex-grow: 1;
-          width: calc(100% - 6rem);
-          font-size: 12px;
-          flex-basis: auto;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis; }
-        .quizzeQuestionBox__right .stepCompleted__item .check {
-          position: relative;
-          z-index: 1;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-basis: 1.6rem;
-          width: 1.6rem;
-          height: 1.6rem;
-          flex-shrink: 1;
-          margin-left: .4rem;
-          border: 1px solid #ededed; }
-          .quizzeQuestionBox__right .stepCompleted__item .check:before {
-            content: '';
-            width: 1.2rem;
-            height: 1.2rem;
-            opacity: 0;
-            background-color: white; }
-        .quizzeQuestionBox__right .stepCompleted__item:hover {
-          border-color: #ccc;
-          background-color: #f9f9f9; }
-        .quizzeQuestionBox__right .stepCompleted__item.checked {
-          border-color: #ccc;
-          background-color: #1c9bae; }
-          .quizzeQuestionBox__right .stepCompleted__item.checked .count, .quizzeQuestionBox__right .stepCompleted__item.checked .preview {
-            color: white; }
-          .quizzeQuestionBox__right .stepCompleted__item.checked .check:before {
-            opacity: 1; }
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 2rem; }
+
+.stepCompleted {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 30rem;
+  overflow: auto;
+  justify-content: space-between; }
+  .stepCompleted__item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    justify-content: space-evenly;
+    width: 19%;
+    height: 3rem;
+    cursor: pointer;
+    color: #333333;
+    margin-bottom: 5px; }
+    .stepCompleted__item.checked {
+      background: #04b112;
+      color: white; }
+    .stepCompleted__item.skiped {
+      background: #dfab00;
+      color: white; }
+    .stepCompleted__item.pemding {
+      background: #e97c00;
+      color: white; }
+    .stepCompleted__item:last-child {
+      margin-right: auto;
+      margin-left: 2px; }
+    .stepCompleted__item:hover {
+      border-color: #666666; }
 
 .quizzeProgressBar {
   position: absolute;
@@ -1500,79 +1559,90 @@ ul {
     background-color: #1c9bae; }
 
 .quizzeQuestions {
-  padding: 0;
-  list-style: none; }
-  .quizzeQuestions li {
-    position: relative;
-    z-index: 1;
-    margin-bottom: 2rem; }
-    .quizzeQuestions li label {
-      font-size: 1.7rem;
-      margin: 0;
-      display: flex;
-      cursor: pointer;
-      align-items: center; }
-    .quizzeQuestions li input {
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      left: 0; }
-    .quizzeQuestions li .icon {
-      display: block;
-      width: 2.2rem;
-      height: 2.2rem;
-      margin-right: 1rem;
-      border-radius: 50%;
-      border: 1px solid #ccc;
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-      .quizzeQuestions li .icon:before {
-        display: block;
-        content: '';
-        width: 1.4rem;
-        height: 1.4rem;
-        border-radius: 50%;
-        background-color: #1c9bae;
-        transform: scale(0);
+  padding: 0; }
+  .quizzeQuestions ul {
+    padding: 0;
+    list-style: none; }
+    .quizzeQuestions ul li {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 2rem; }
+      .quizzeQuestions ul li label {
+        font-size: 1.7rem;
+        margin: 0;
+        display: flex;
+        cursor: pointer;
+        align-items: center; }
+      .quizzeQuestions ul li input {
         opacity: 0;
-        transition: all .1s ease-out; }
-    .quizzeQuestions li input:checked ~ .icon {
-      border-color: #1c9bae; }
-      .quizzeQuestions li input:checked ~ .icon:before {
-        transform: scale(1);
-        opacity: 1; }
-  .quizzeQuestions.typeImage {
-    display: flex; }
-    .quizzeQuestions.typeImage li {
-      margin-left: 2rem; }
-      .quizzeQuestions.typeImage li:first-child {
-        margin-left: 0; }
-      .quizzeQuestions.typeImage li label {
-        display: block; }
-      .quizzeQuestions.typeImage li .image {
+        position: absolute;
+        top: 0;
+        left: 0; }
+      .quizzeQuestions ul li .icon {
         display: block;
-        width: 150px;
-        height: 150px;
-        border: 1px solid #ddd; }
-      .quizzeQuestions.typeImage li .icon {
-        margin: 1.5rem auto 0; }
+        width: 2.2rem;
+        height: 2.2rem;
+        margin-right: 1rem;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .quizzeQuestions ul li .icon:before {
+          display: block;
+          content: '';
+          width: 1.4rem;
+          height: 1.4rem;
+          border-radius: 50%;
+          background-color: #1c9bae;
+          transform: scale(0);
+          opacity: 0;
+          transition: all .1s ease-out; }
+      .quizzeQuestions ul li input:checked ~ .icon {
+        border-color: #1c9bae; }
+        .quizzeQuestions ul li input:checked ~ .icon:before {
+          transform: scale(1);
+          opacity: 1; }
+    .quizzeQuestions ul.typeImage {
+      display: flex; }
+      .quizzeQuestions ul.typeImage li {
+        margin-left: 2rem; }
+        .quizzeQuestions ul.typeImage li:first-child {
+          margin-left: 0; }
+        .quizzeQuestions ul.typeImage li label {
+          display: block; }
+        .quizzeQuestions ul.typeImage li .image {
+          display: block;
+          width: 150px;
+          height: 150px;
+          border: 1px solid #ddd; }
+        .quizzeQuestions ul.typeImage li .icon {
+          margin: 1.5rem auto 0; }
+  .quizzeQuestions .btnBox {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem; }
+    .quizzeQuestions .btnBox .btn {
+      margin-right: 5px; }
+      .quizzeQuestions .btnBox .btn:last-child {
+        margin-right: 0; }
 
 .quizzeTimer {
   position: absolute;
   top: 3rem;
   right: 0;
-  padding: 1.5rem 2.5rem;
-  text-align: center;
-  border-radius: 1rem 0 0 1rem;
-  background-color: #e4dff6;
   display: flex;
-  align-items: center; }
+  text-align: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 1rem 0 0 1rem;
+  background-color: #e4dff6; }
   .quizzeTimer span {
     display: block; }
     .quizzeTimer span.timeLeft {
       font-size: 2.4rem;
-      margin-left: 1rem; }
+      margin-left: 1rem;
+      color: red; }
 
 .cameraWidget {
   position: absolute;
@@ -1597,3 +1667,5 @@ ul {
     background-color: #ec2929; }
     .cameraWidget .close img {
       width: 1.6rem; }
+
+/*# sourceMappingURL=style.css.map */

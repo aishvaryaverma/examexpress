@@ -28,7 +28,18 @@
 		</div>
 
 		<div class="mainHeader__links">
-			<a href="#!">Logout <i class="fas fa-sign-out-alt"></i></a>
+			<div class="dropdown">
+				<button data-toggle="dropdown">
+					<i class="fas fa-user userIcon"></i>
+					<span>Aishvarya Verma</span>
+					<i class="fas fa-caret-down"></i>
+				</button>
+				<div class="dropdown-menu dropdown-menu-right ">
+					<a class="dropdown-item" href="candidate.html">Profile</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="../login.html">Logout</a>
+				</div>
+			</div>
 		</div>
 	</header>
 	
@@ -46,7 +57,7 @@
 		<div class="dashboard__content">
 			<div class="card">
 				<div class="card-body">
-					<h3 class="size36 reverse margin-bottom-60">Agri_GFP_The_Grp-01</h3>
+					<h3 class="size36 reverse margin-bottom-0 margin-top-20">Agri_GFP_The_Grp-01</h3>
 					
 					<div class="quizzeQuestionBox">
 						<div class="quizzeQuestionBox__left">
@@ -54,15 +65,15 @@
 								<div class="progress" style="width: 30%;"></div>
 							</div>
 							<div class="quizzeTimer">
-								<span class="placeholder">Time Remaining: </span>
+								<span class="placeholder">Time Remaining:</span>
 								<span class="timeLeft">45:35</span>
 							</div>
-							<form>
+							<div class="quizzeQuestions">
 								<h4 class="size24 normal margin-bottom-30">At which state of analytics does your company stand?</h4>
-								<ul class="quizzeQuestions">
+								<ul>
 									<li>
 										<label for="question1">
-											<input type="radio" name="question" id="question1">
+											<input type="radio" name="question" id="question1" checked>
 											<span class="icon"></span>
 											<span class="text">All decisions are spontaneous</span>
 										</label>
@@ -96,48 +107,44 @@
 										</label>
 									</li>
 								</ul>
-								<div class="padding-top-40">
-									<input type="submit" value="Next" class="btn btn-primary">
+
+								<div class="btnBox">
+									<input type="submit" value="Next" class="btn btn-sm btn-success">
+									<a href="#!" class="btn btn-sm btn-warning">Skip</a>
+									<a href="#!" class="btn btn-sm btn-default">Remind me later</a>
 								</div>
-							</form>
+							</div>
 						</div>
 						<div class="quizzeQuestionBox__right">
+							<h4 class="size18 normal margin-bottom-10 text-center">Status</h4>
 							<div class="stepCompleted">
-								<div class="stepCompleted__item checked">
-									<span class="count">1.</span>
-									<span class="preview">At which state of analytics does your company stand?</span>
-									<span class="check"></span>
-								</div>
-								<div class="stepCompleted__item">
-									<span class="count">2.</span>
-									<span class="preview">At which state of analytics does your company stand?</span>
-									<span class="check"></span>
-								</div>
-								<div class="stepCompleted__item">
-									<span class="count">3.</span>
-									<span class="preview">At which state of analytics does your company stand?</span>
-									<span class="check"></span>
-								</div>
-								<div class="stepCompleted__item">
-									<span class="count">4.</span>
-									<span class="preview">At which state of analytics does your company stand?</span>
-									<span class="check"></span>
-								</div>
-								<div class="stepCompleted__item">
-									<span class="count">5.</span>
-									<span class="preview">At which state of analytics does your company stand?</span>
-									<span class="check"></span>
-								</div>
+								<div class="stepCompleted__item checked">1</div>
+								<div class="stepCompleted__item skiped">2</div>
+								<div class="stepCompleted__item pemding">3</div>
+								<div class="stepCompleted__item checked">4</div>
+								<div class="stepCompleted__item checked">5</div>
+								<div class="stepCompleted__item checked">6</div>
+								<div class="stepCompleted__item ">7</div>
+								<div class="stepCompleted__item">8</div>
+								<div class="stepCompleted__item">9</div>
+								<div class="stepCompleted__item">10</div>
+								<div class="stepCompleted__item">11</div>
+								<div class="stepCompleted__item">12</div>
+								<div class="stepCompleted__item">13</div>
+								<div class="stepCompleted__item">14</div>
+								<div class="stepCompleted__item">15</div>
+								<div class="stepCompleted__item">16</div>
+								<div class="stepCompleted__item">17</div>
 							</div>
 						</div>
 					</div>
 
-					<div class="cameraWidget">
+					<!-- <div class="cameraWidget">
 						<div class="close">
 							<img src="../img/close_black.svg" alt="x">
 						</div>
 						<img src="../img/front-camera.jpg" alt="avatar">
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

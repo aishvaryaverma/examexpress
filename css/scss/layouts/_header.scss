@@ -15,28 +15,50 @@
         background-color: $color-white;
 
         a {
-            display: block;
-            padding: 2rem;
-            max-width: 26rem;
-            min-height: 8.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 2rem;
+            max-width: 22rem;
+            min-height: 6rem;
+
+            img {
+                max-height: 3rem;
+            }
         }
     }
 
     &__links {
         display: flex;
+        padding-right: 2rem;
         align-items: center;
         justify-content: flex-end;
-        padding-right: 4rem;
+        
+        .dropdown {
+            display: flex;
+            font-size: 1.6rem;
+            
+            button {
+                display: flex;
+                align-items: center;
+                border: none;
+                outline: none;
+                background: none;
+                padding: 1rem;
+                color: #ffffff;
 
-        a {
-            display: block;
-            font-size: $normal-font-size;
-            color: white;
-            padding: 0 1rem;
-            line-height: 4rem;
+                .userIcon {
+                    font-size: 2rem;
+                    margin-right: 10px;
+                }
+                i {
+                    margin-left: 5px;
+                }
+            }
 
-            &:hover {
-                i { margin-left: .2rem; }
+            .dropdown-menu {
+                min-width: 16rem;
+                font-size: 1.5rem;
             }
         }
     }

@@ -14,4 +14,19 @@
         font-size: $normal-font-size;
         padding: 1rem 1.5rem;
     }
+
+    .btnBox {
+        display: flex;
+        align-items: center;
+
+        .btn {
+            margin-left: .5rem;
+
+            &:first-child { margin-left: 0; }
+        }
+
+        &.justify-between { justify-content: space-between; }
+        &.justify-end { justify-content: flex-end; }
+        &.justify-center { justify-content: center; }
+    }
 }

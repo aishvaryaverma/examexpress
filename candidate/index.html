@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="theme-color" content="#1c9bae" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<!-- Favicon -->
+	<link rel="icon" href="favicon.ico" />
+	<link rel="shortcut icon" href="favicon.ico" />
+
+	<!-- Title -->
+	<title>ExamExpress</title>
+
+	<!-- StyleSheet -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 			 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+	<link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+	<header class="mainHeader">
+		<div class="mainHeader__logo">
+			<a href="#!"><img src="../img/logo.png" alt="ExamExpress"></a>
+		</div>
+
+		<div class="mainHeader__links">
+			<div class="dropdown">
+				<button data-toggle="dropdown">
+					<i class="fas fa-user userIcon"></i>
+					<span>Aishvarya Verma</span>
+					<i class="fas fa-caret-down"></i>
+				</button>
+				<div class="dropdown-menu dropdown-menu-right ">
+					<a class="dropdown-item" href="candidate.html">Profile</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="../login.html">Logout</a>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	<section class="dashboard floatFooterBottom">
+		<div class="dashboard__menu">
+			<div class="leftMenu">
+				<ul>
+					<li class="active"><a href="#!">Profile</a></li>
+					<li><a href="#!">Documents</a></li>
+					<li><a href="#!">Quizzes</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="dashboard__content">
+			<div class="card">
+				<div class="card-body">
+					<h3 class="size30 reverse margin-bottom-20">Documents for Identity proof</h3>
+                    
+                    <div class="documentBox">
+                        <div class="documentBox__item documentBox--webcam">
+                            <span class="label">Upload Photo</span>
+                            <div class="myCamera" id="my_camera"></div>
+                            <div class="results" id="results"></div>
+                            <div class="btnBox">
+                                <a href="#" class="btn btn-sm btn-primary" id="openPhoto">Open Camera</a>
+                                <a href="#" class="btn btn-sm btn-primary d-none" id="takePhoto">Take Photo</a>
+                                <a href="#" class="btn btn-sm btn-border d-none" id="clearPhoto">Clear Photo</a>
+                            </div>
+                            <a href="#" class="btn btn-primary d-none" id="uploadPhoto">Upload Photo</a>
+                        </div>
+                        <div class="documentBox__item">
+                            <span class="label">Upload Aadhar Card</span>
+                            <input type="file" name="" id="">
+                        </div>
+                    </div>
+
+                    <div class="padding-top-30 padding-bottom-10 text-center">
+                        <a href="quizze-1.html" class="btn btn-primary btn-lg">Start Quizze</a>
+                    </div>
+                    <div class="instructionsBox">
+                        <h4 class="size24 normal">Instructions</h4>
+                        <div class="timer">Time Allowed: 60 min</div>
+                        <ol class="numberList">
+                            <li>Please see and ensure the details of this test (Like duration and number of questions).</li>
+                            <li>As the test begins, test question will start appering sequentially (one by one ) and reverse clock will show the remaining time.</li>
+                            <li>Incase of any power failure or any interruption, you need not be panic. your test data will get preserve on the backend server.</li>
+                            <li>You should make sure that before your click on the "Submit Test" Button, you have completed/finished the response activity; incase</li>
+                            <li>Once you have pressed the submit button of the ongoing test, you will get confirmation message on screen.</li>
+                            <li>Now you may Click on "Start" button to begin the test .....!! ALL THE VERY BEST TO YOU !!</li>
+                        </ol>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="mainFooter">
+		<div class="container">&copy; Copyright © MD Tech Solutions 2018</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        
+    <script src="../js/webcam.min.js"></script>
+
+	<script type="text/javascript">
+		// Example starter JavaScript for disabling form submissions if there are invalid fields
+		(function () {
+			'use strict';
+			window.addEventListener('load', function () {
+				// Fetch all the forms we want to apply custom Bootstrap validation styles to
+				var forms = document.getElementsByClassName('needs-validation');
+				// Loop over them and prevent submission
+				var validation = Array.prototype.filter.call(forms, function (form) {
+					form.addEventListener('submit', function (event) {
+						if (form.checkValidity() === false) {
+							event.preventDefault();
+							event.stopPropagation();
+						}
+						form.classList.add('was-validated');
+					}, false);
+				});
+			}, false);
+        })();
+
+        $('#openPhoto').click(function() {
+            $('#openPhoto').hide();
+            $('.myCamera').show();
+            $('#takePhoto, #clearPhoto').removeClass('d-none');
+            Webcam.set({
+                width: 340,
+                height: 260,
+                image_format: 'jpeg',
+                jpeg_quality: 90
+            });
+            Webcam.attach('#my_camera');
+
+            return false;
+        });
+
+        $('#takePhoto').click(take_snapshot);
+        $('#clearPhoto').click(clear_snapshot);
+
+        function take_snapshot() {
+            // take snapshot and get image data
+            Webcam.snap( function(data_uri) {
+                // display results in page
+                $('#results').show();
+                document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+            });
+            $('#uploadPhoto').removeClass('d-none');
+            return false
+        }
+        function clear_snapshot() {
+            $('#results').hide();
+            document.getElementById('results').innerHTML = '';
+            $('#uploadPhoto').addClass('d-none')
+            return false
+        }
+	</script>
+</body>
+</html>
