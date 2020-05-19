@@ -10,24 +10,28 @@
         width: 1px;
         height: 100%;
         background-color: #ddd;
+        @media (max-width: $tablet-small) {
+            display: none;
+        }
     }
-
     .form {
-        padding-right: 4rem;
+        @media (min-width: $tablet-small) {
+            padding-right: 4rem;
+        }
     }
     .content {
-        padding: 2rem 0 2rem 4rem;
-
+        padding: 2rem 0 2rem;
+        @media (min-width: $tablet-small) {
+            padding: 2rem 0 2rem 4rem;
+        }
         ul {
             list-style: none;
-
             li {
                 position: relative;
                 z-index: 1;
                 display: flex;
                 padding-left: 2rem;
                 margin-bottom: 1rem;
-
                 &:before {
                     content: '';
                     position: absolute;
